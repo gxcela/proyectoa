@@ -4,7 +4,7 @@ import { useState } from "react";
 import Image from "next/image";
 
 export default function Page() {
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const galleryItems = [
     { img: "/placeholder-playa.jpg", title: "Viña del Mar 🌊", message: "Nuestro primer atardecer" },
