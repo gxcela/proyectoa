@@ -35,28 +35,28 @@ export default function HistoriaPage() {
   ];
 
   return (
-    <main className="min-h-screen pt-16 px-4 py-8 max-w-4xl mx-auto">
+    <main className="min-h-screen pt-20 sm:pt-24 md:pt-28 px-3 sm:px-4 py-6 sm:py-8 max-w-4xl mx-auto">
       <section>
-        <h2 className="text-4xl md:text-5xl font-bold mb-16 text-center bg-gradient-to-r from-amber-400 via-pink-400 to-purple-500 bg-clip-text text-transparent drop-shadow-2xl">
+        <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 sm:mb-12 md:mb-16 text-center bg-gradient-to-r from-amber-400 via-pink-400 to-purple-500 bg-clip-text text-transparent drop-shadow-2xl px-2">
           Nuestra historia 💕
         </h2>
         
         <div className="relative">
-          {/* Línea central */}
-          <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-pink-400 via-purple-400 to-pink-500 shadow-lg"></div>
+          {/* Línea central - oculta en móvil */}
+          <div className="hidden md:block absolute left-1/2 transform -translate-x-1/2 h-full w-0.5 bg-gradient-to-b from-pink-400 via-purple-400 to-pink-500 shadow-lg"></div>
           
-          <div className="space-y-16">
+          <div className="space-y-8 sm:space-y-12 md:space-y-16">
             {timeline.map((event, index) => (
               <div
                 key={index}
-                className={`flex items-center justify-center relative ${
-                  index % 2 === 0 ? "" : "flex-row-reverse"
+                className={`flex flex-col md:flex-row items-center justify-center relative ${
+                  index % 2 === 0 ? "" : "md:flex-row-reverse"
                 }`}
               >
-                {/* Foto circular */}
-                <div className="flex flex-col items-center w-1/2 z-10">
+                {/* Foto */}
+                <div className="flex flex-col items-center w-full md:w-1/2 z-10 mb-4 md:mb-0">
                   <div 
-                    className="w-55 h-48 rounded-3xl overflow-hidden shadow-2xl ring-12 ring-white/30 hover:scale-110 hover:ring-pink-400/50 transition-all duration-500 cursor-pointer relative group"
+                    className="w-full max-w-xs sm:max-w-sm md:w-55 h-48 sm:h-56 md:h-48 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl ring-4 sm:ring-8 md:ring-12 ring-white/30 hover:scale-105 md:hover:scale-110 hover:ring-pink-400/50 transition-all duration-500 cursor-pointer relative group"
                     style={{
                       backgroundImage: `url(${event.photo})`,
                       backgroundSize: 'cover',
@@ -64,26 +64,26 @@ export default function HistoriaPage() {
                     }}
                   >
                     {/* Overlay romántico */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent rounded-3xl group-hover:bg-black/30 transition-all duration-300"></div>
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent rounded-2xl sm:rounded-3xl group-hover:bg-black/30 transition-all duration-300"></div>
                     
                   </div>
-                  {/* Línea vertical */}
-                  <div className={`w-0.5 h-20 bg-gradient-to-${index % 2 === 0 ? 'b' : 't'} ${event.color} shadow-sm`}></div>
+                  {/* Línea vertical - solo desktop */}
+                  <div className={`hidden md:block w-0.5 h-20 bg-gradient-to-${index % 2 === 0 ? 'b' : 't'} ${event.color} shadow-sm`}></div>
                 </div>
                 
                 {/* Contenido */}
-                <div className={`w-1/2 ${index % 2 === 0 ? 'pl-12' : 'pr-12'}`}>
-                  <div className="bg-white/5 backdrop-blur-xl rounded-3xl p-8 border border-white/10 shadow-2xl hover:shadow-pink-500/25 hover:bg-white/10 transition-all duration-500 hover:-translate-y-2">
-                    <div className="flex items-baseline gap-4 mb-6">
-                      <span className="text-3xl font-black bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
+                <div className={`w-full md:w-1/2 ${index % 2 === 0 ? 'md:pl-12' : 'md:pr-12'}`}>
+                  <div className="bg-white/5 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-4 sm:p-6 md:p-8 border border-white/10 shadow-2xl hover:shadow-pink-500/25 hover:bg-white/10 transition-all duration-500 hover:-translate-y-1 md:hover:-translate-y-2">
+                    <div className="flex flex-col sm:flex-row items-start sm:items-baseline gap-2 sm:gap-4 mb-4 sm:mb-6">
+                      <span className="text-2xl sm:text-3xl font-black bg-gradient-to-r from-pink-400 to-purple-500 bg-clip-text text-transparent drop-shadow-lg">
                         {event.date}
                       </span>
-                      <span className="text-lg font-medium text-pink-200/80 italic">{event.place}</span>
+                      <span className="text-base sm:text-lg font-medium text-pink-200/80 italic">{event.place}</span>
                     </div>
-                    <h3 className="text-3xl md:text-4xl font-bold mb-6 bg-gradient-to-r from-white to-pink-100 bg-clip-text text-transparent">
+                    <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 sm:mb-4 md:mb-6 bg-gradient-to-r from-white to-pink-100 bg-clip-text text-transparent">
                       {event.title}
                     </h3>
-                    <p className="text-xl leading-relaxed text-white/95 font-light tracking-wide">
+                    <p className="text-base sm:text-lg md:text-xl leading-relaxed text-white/95 font-light tracking-wide">
                       {event.description}
                     </p>
                   </div>

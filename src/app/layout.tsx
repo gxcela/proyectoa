@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Navbar } from "@/components/Navbar";  // ← DESCOMENTA ESTA LÍNEA
+import { MusicPlayer } from "@/components/MusicPlayer";
 
 export const metadata: Metadata = {
   title: "San Valentín",
@@ -19,6 +20,7 @@ export default function RootLayout({
       >
         <Navbar />  {/* ← DESCOMENTA ESTA LÍNEA */}
         <div className="pt-16">{children}</div>  {/* ← padding-top para navbar */}
+        <MusicPlayer />
       </body>
     </html>
   );

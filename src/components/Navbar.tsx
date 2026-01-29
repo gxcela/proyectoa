@@ -25,9 +25,9 @@ export const Navbar: React.FC = () => {
         }
       `}</style>
       
-      <nav className="fixed top-6 left-0 right-0 z-50 px-8">
+      <nav className="fixed top-3 sm:top-4 md:top-6 left-0 right-0 z-50 px-2 sm:px-4 md:px-8">
         <div className="max-w-6xl mx-auto">
-          <div className="navbar-container rounded-3xl shadow-2xl p-4 md:p-6 flex items-center justify-center gap-6 md:gap-8 h-20">
+          <div className="navbar-container rounded-2xl sm:rounded-3xl shadow-2xl p-2 sm:p-3 md:p-6 flex items-center justify-center gap-1 sm:gap-2 md:gap-8">
             {navItems.map((item) => {
               const isActive = pathname === item.href;
               
@@ -36,20 +36,20 @@ export const Navbar: React.FC = () => {
                   key={item.href}
                   href={item.href}
                   className={`
-                    flex items-center gap-3 px-6 py-4 min-w-0 rounded-2xl font-semibold text-base md:text-lg transition-all duration-500 ease-out group relative overflow-hidden whitespace-nowrap
+                    flex items-center gap-2 px-3 py-3 sm:px-4 sm:py-3 md:px-6 md:py-4 min-w-0 rounded-xl sm:rounded-2xl font-semibold text-base md:text-lg transition-all duration-500 ease-out group relative overflow-hidden
                     ${isActive 
                       ? 'bg-gradient-to-r from-pink-400/90 to-purple-500/90 shadow-xl shadow-pink-500/40 border-2 border-white/40 scale-[1.02]' 
                       : 'bg-white/10 hover:bg-white/20 hover:scale-[1.01] hover:shadow-lg hover:shadow-white/30 hover:border hover:border-white/30'
                     }
                   `}
                 >
-                  <span className="text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <span className="text-xl sm:text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
                     {item.icon}
                   </span>
-                  <span className="truncate max-w-[100px] md:max-w-none">{item.label}</span>
+                  <span className="hidden sm:inline truncate">{item.label}</span>
                   
                   {isActive && (
-                    <div className="absolute inset-0 bg-white/20 rounded-2xl backdrop-blur-sm animate-pulse"></div>
+                    <div className="absolute inset-0 bg-white/20 rounded-xl sm:rounded-2xl backdrop-blur-sm animate-pulse"></div>
                   )}
                 </Link>
               );
