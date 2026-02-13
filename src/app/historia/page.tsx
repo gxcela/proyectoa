@@ -1,36 +1,183 @@
+"use client";
+
+import { useState } from "react";
+
 export default function HistoriaPage() {
+  const [selectedPhoto, setSelectedPhoto] = useState<string | null>(null);
+
+  const colors = [
+    "from-pink-400/80 to-purple-500/80",
+    "from-purple-500/80 to-pink-400/80",
+    "from-orange-400/80 to-pink-500/80",
+    "from-rose-400/80 to-fuchsia-500/80",
+  ];
+
   const timeline = [
     {
-      date: "2024",
-      place: "Viña del Mar",
-      photo: "https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?w=500&h=500&fit=crop",
-      color: "from-pink-400/80 to-purple-500/80",
-      title: "Nos conocimos",
-      description: "Nuestro primer encuentro en la playa de Viña del Mar. El sol se ponía y tu sonrisa iluminó todo.",
+      date: "28-01-2022",
+      place: "",
+      photo: "/img/historia/1.jpeg",
+      color: colors[0],
+      title: "",
+      description: "Fue la primera vez que hablamos, gracias por ser tan arriesgada y seguir hablándome a pesar de vivir lejos.",
     },
     {
-      date: "2024",
-      place: "Primera cita",
-      photo: "https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=500&h=500&fit=crop",
-      color: "from-purple-500/80 to-pink-400/80",
-      title: "Primer beso",
-      description: "Esa noche mágica caminando por la costa. El corazón me latía como nunca.",
+      date: "16-02-2022",
+      place: "",
+      photo: "/img/historia/2.jpeg",
+      color: colors[1],
+      title: "",
+      description: "Fue la primera vez que nos vimos y la primera fotito que te saqué, muy hermosa <3.",
     },
     {
-      date: "2025",
-      place: "Aniversario",
-      photo: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&h=500&fit=crop",
-      color: "from-orange-400/80 to-pink-500/80",
-      title: "Primer aniversario",
-      description: "Celebrando nuestro amor con una cena inolvidable bajo las estrellas.",
+      date: "18-02-2022",
+      place: "",
+      photo: "/img/historia/3.jpeg",
+      color: colors[2],
+      title: "",
+      description: "La primera cita oficial que tuvimos con pizza.",
     },
     {
-      date: "2026",
-      place: "San Valentín",
-      photo: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=500&fit=crop",
-      color: "from-rose-400/80 to-fuchsia-500/80",
-      title: "Este San Valentín",
-      description: "Esta página web es mi regalo. Te amo cada día más.",
+      date: "20-03-2022",
+      place: "",
+      photo: "/img/historia/4.jpeg",
+      color: colors[3],
+      title: "",
+      description: "Tu primer cumpleaños que celebramos juntas y estando en el lolla.",
+    },
+    {
+      date: "13-05-2022",
+      place: "",
+      photo: "/img/historia/5.jpeg",
+      color: colors[0],
+      title: "",
+      description: "El día que empezamos a pololear <3.",
+    },
+    {
+      date: "01-10-2022",
+      place: "",
+      photo: "/img/historia/6.jpeg",
+      color: colors[1],
+      title: "",
+      description: "El día que llegó nuestro bebé larguito.",
+
+    },
+    {
+      date: "24-12-2022",
+      place: "",
+      photo: "/img/historia/7.jpeg",
+      color: colors[2],
+      title: "",
+      description: "El día que celebramos nuestra primera navidad juntas.",
+    },
+    {
+      date: "31-12-2022",
+      place: "",
+      photo: "/img/historia/8.jpeg",
+      color: colors[3],
+      title: "",
+      description: "Primer año nuevo juntas.",
+
+    },
+    {
+      date: "12-02-2023",
+      place: "",
+      photo: "/img/historia/9.jpeg",
+      color: colors[0],
+      title: "",
+      description: "El día que compramos todas nuestras cositas para irnos a vivir solas.",
+
+    },
+    {
+      date: "01-03-2023",
+      place: "",
+      photo: "/img/historia/10.jpeg",
+      color: colors[1],
+      title: "",
+      description: "Primer día comiendo en el depa de Viña.",
+
+    },
+    {
+      date: "04-06-2023",
+      place: "",
+      photo: "/img/historia/11.jpeg",
+      color: colors[2],
+      title: "",
+      description: "El día que llegó nuestra Kiwita.",
+
+    },
+    {
+      date: "11-11-2023",
+      place: "",
+      photo: "/img/historia/oliverbb.jpeg",
+      color: colors[3],
+      title: "",
+      description: "Llegada de nuestro Oliver, el más odioso.",
+    },
+    {
+      date: "31-12-2023",
+      place: "",
+      photo: "/img/historia/12.jpeg",
+      color: colors[3],
+      title: "",
+      description: "Celebrando el año nuevo en el otro depa de Viña jeje.",
+
+    },
+    {
+      date: "23-03-2024",
+      place: "",
+      photo: "/img/historia/13.jpeg",
+      color: colors[0],
+      title: "",
+      description: "Primer día en el depa de tu primer auto <3.",
+    },
+    {
+      date: "17-02-2024",
+      place: "",
+      photo: "/img/historia/14.jpeg",
+      color: colors[1],
+      title: "",
+      description: "Primer matrimonio al que fuimos juntas, salimos muy guapas :*",
+    },
+    {
+      date: "25-12-2024",
+      place: "",
+      photo: "/img/historia/15.jpeg",
+      color: colors[2],
+      title: "",
+      description: "Celebrando otra navidad juntas.",
+    },
+    {
+      date: "04-02-2025",
+      place: "",
+      photo: "/img/historia/16.jpeg",
+      color: colors[3],
+      title: "",
+      description: "Viajando para irnos a vivir al sur juntas, el comienzo de una nueva etapa <3.",
+    },
+    {
+      date: "24-02-2025",
+      place: "",
+      photo: "/img/historia/17.jpeg",
+      color: colors[0],
+      title: "",
+      description: "Viajecito a Chiloé.",
+    },
+    {
+      date: "25-09-2025",
+      place: "",
+      photo: "/img/historia/18.jpeg",
+      color: colors[1],
+      title: "",
+      description: "Cuando conocimos a Totito.",
+    },
+    {
+      date: "05-02-2026",
+      place: "",
+      photo: "/img/historia/19.jpeg",
+      color: colors[2],
+      title: "",
+      description: "Nuestra última adquisición, llegada de Maqui.",
     },
   ];
 
@@ -53,6 +200,14 @@ export default function HistoriaPage() {
                   index % 2 === 0 ? "" : "md:flex-row-reverse"
                 }`}
               >
+                {/* Conector central */}
+                <div className="hidden md:block absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-4 h-4 rounded-full bg-gradient-to-r from-white/80 to-white/50 ring-4 ring-white/20 shadow-lg"></div>
+                <div
+                  className={`hidden md:block absolute top-1/2 -translate-y-1/2 h-0.5 w-16 bg-gradient-to-r ${
+                    index % 2 === 0 ? "left-1/2" : "right-1/2"
+                  } ${event.color}`}
+                ></div>
+
                 {/* Foto */}
                 <div className="flex flex-col items-center w-full md:w-1/2 z-10 mb-4 md:mb-0">
                   <div 
@@ -62,11 +217,23 @@ export default function HistoriaPage() {
                       backgroundSize: 'cover',
                       backgroundPosition: 'center'
                     }}
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Ver foto en grande"
+                    onClick={() => setSelectedPhoto(event.photo)}
+                    onKeyDown={(eventKey) => {
+                      if (eventKey.key === "Enter" || eventKey.key === " ") {
+                        eventKey.preventDefault();
+                        setSelectedPhoto(event.photo);
+                      }
+                    }}
                   >
                     {/* Overlay romántico */}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/20 to-transparent rounded-2xl sm:rounded-3xl group-hover:bg-black/30 transition-all duration-300"></div>
                     
                   </div>
+                  {/* Separador móvil */}
+                  <div className="md:hidden mt-4 h-0.5 w-24 bg-gradient-to-r from-pink-400/70 via-purple-400/70 to-pink-500/70 rounded-full"></div>
                   {/* Línea vertical - solo desktop */}
                   <div className={`hidden md:block w-0.5 h-20 bg-gradient-to-${index % 2 === 0 ? 'b' : 't'} ${event.color} shadow-sm`}></div>
                 </div>
@@ -93,6 +260,35 @@ export default function HistoriaPage() {
           </div>
         </div>
       </section>
+
+      {selectedPhoto && (
+        <div
+          className="fixed inset-0 z-50 flex items-start justify-center bg-black/80 backdrop-blur-sm px-3 pt-45"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Vista ampliada"
+          onClick={() => setSelectedPhoto(null)}
+        >
+          <div
+            className="relative w-full max-w-xs max-h-[40vh]"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <button
+              type="button"
+              className="absolute -top-4 right-0 translate-y-0 rounded-full bg-white/90 text-black px-3 py-1 text-sm font-semibold shadow-lg hover:bg-white"
+              onClick={() => setSelectedPhoto(null)}
+              aria-label="Cerrar"
+            >
+              Cerrar
+            </button>
+            <img
+              src={selectedPhoto}
+              alt="Foto de la historia"
+              className="w-full h-full object-contain rounded-2xl shadow-2xl"
+            />
+          </div>
+        </div>
+      )}
     </main>
   );
 }

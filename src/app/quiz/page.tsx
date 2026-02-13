@@ -14,7 +14,7 @@ export default function QuizPage() {
 
   const questions = [
     {
-      question: "¿Cuál es mi comida favorita que compartimos?",
+      question: "¿Cuál es la comida que más nos gusta comer?",
       options: ["Pizza", "Sushi", "Asado", "Pasta"],
       correct: "Sushi",
       hint: "🍱 Siempre pedimos lo mismo",

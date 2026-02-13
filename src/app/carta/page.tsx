@@ -7,15 +7,49 @@ export default function CartaPage() {
   const [cartaText, setCartaText] = useState("");
 
   // ← AQUÍ CAMBIA CON TUS FRASES PERSONALES
-  const fullCarta = `Mi amor,
+  const fullCarta = `Hola bebé,
+  
+  Sé que me dijiste que ya no te daba detalles como antes,
+  
+  te pido disculpas por eso, 
 
-Desde el primer momento que te vi supe que eras especial.
+  por descuidarte y no demostrarte lo mucho que te amo.
 
-Cada día a tu lado es una aventura llena de amor y felicidad.
+  La vez que dije que es normal que las parejas cambien con el tiempo, 
 
-Quiero que sepas que eres lo más importante en mi vida.
+  no quise decir que el amor se termina, sino que se transforma,
 
-Te amo con todo mi corazón, hoy y siempre. 💖`;
+  pero igualmente hay que cuidarlo para que crezca más
+
+  y siento que en eso he fallado un poco.
+
+  Quiero que sepas que yo no he olvidado la primera vez que te vi 
+  
+  y lo que sentí en ese momento.
+
+  Siento lo mismo cada vez que te veo, 
+  
+  que hablamos, 
+  
+  que me besas, 
+  
+  que me abrazas, 
+  
+  cuando nos reímos,
+
+  cuando me dices que me amas,
+
+  siempre.
+
+  Te puedo pedir perdón por tantas cosas, pero siento que no es suficiente,
+
+  lo que importa es dejar claro que quiero mejorar todo lo que no he hecho bien.
+
+  No olvides que eres el amor de mi vida y que vamos a cumplir 
+  
+  todas nuestras metas.
+
+  Te amo mucho, mi vida. Siempre.💖`;
 
   useEffect(() => {
     if (cartaVisible) {

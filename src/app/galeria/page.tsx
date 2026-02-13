@@ -6,12 +6,86 @@ import Image from "next/image";
 export default function Page() {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
-  const galleryItems = [
-    { img: "/placeholder-playa.jpg", title: "Viña del Mar 🌊", message: "Nuestro primer atardecer" },
-    { img: "/placeholder-pareja.jpg", title: "Nosotros 💕", message: "Cada momento contigo" },
-    { img: "/placeholder-abrazo.jpg", title: "Abrazo ❤️", message: "Tu calor favorito" },
-    { img: "/placeholder-siempre.jpg", title: "Siempre ✨", message: "Futuro juntos" }
+  const galleryImages = [
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.44 (3).jpeg",
+    "/img/galería/17-02-2022(2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.49 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.47 (3).jpeg",
+    "/img/galería/18-02-2022(2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.55.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.08.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.45 (4).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.41.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.52 (4).jpeg",
+    "/img/galería/17-02-2022(3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.57 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.53 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.05 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.49 (4).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.44.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.51 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.56 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.45 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.47 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.06 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.09 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.04 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.52 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.49 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.45 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.52 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.07 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.54 (4).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.48 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.57 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.05 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.46 (4).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.44 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.52 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.50 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.48 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.57 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.54 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.46 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.44 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.09 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.06 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.52.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.48 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.45 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.53 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.46 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.54 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.49.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.55 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.57.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.09.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.48.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.07 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.50 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.49 (3).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.08 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.51 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.46.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.05 (2).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.02.53.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.12.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.19.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.22.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.23.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.04 (1).jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.05.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.06.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.14.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.17.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.03.36.jpeg",
+    "/img/galería/WhatsApp Image 2026-02-12 at 13.10.27.jpeg",
   ];
+
+  const galleryItems = galleryImages.map((img, index) => ({
+    img: encodeURI(img),
+    title: `Recuerdo ${index + 1}`,
+  }));
 
   return (
     <>
@@ -28,19 +102,12 @@ export default function Page() {
                 className="group relative h-64 sm:h-72 md:h-80 rounded-2xl sm:rounded-3xl overflow-hidden shadow-xl cursor-pointer hover:shadow-2xl hover:shadow-pink-500/30 transition-all duration-500 hover:scale-[1.02]"
                 onClick={() => setSelectedImage(index)}
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-gray-200 to-gray-300 flex items-center justify-center z-10">
-                  <span className="text-5xl sm:text-6xl opacity-20">📸</span>
-                </div>
                 <Image
                   src={item.img}
                   alt={item.title}
                   fill
-                  className="object-cover group-hover:scale-110 transition-transform duration-700 opacity-0 group-hover:opacity-100"
+                  className="object-cover group-hover:scale-110 transition-transform duration-700"
                 />
-                <div className="absolute bottom-3 sm:bottom-4 left-3 sm:left-4 right-3 sm:right-4 bg-white/90 backdrop-blur-sm p-3 sm:p-4 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-all duration-300">
-                  <h3 className="font-bold text-lg sm:text-xl text-gray-800 mb-1">{item.title}</h3>
-                  <p className="text-gray-600 text-xs sm:text-sm">{item.message}</p>
-                </div>
               </div>
             ))}
           </div>
@@ -49,18 +116,14 @@ export default function Page() {
 
       {selectedImage !== null && (
         <div className="fixed inset-0 bg-black/90 z-50 flex items-center p-4 sm:p-6 md:p-8" onClick={() => setSelectedImage(null)}>
-          <div className="max-w-3xl mx-auto w-full">
+          <div className="max-w-5xl mx-auto w-full">
             <Image
               src={galleryItems[selectedImage].img}
               alt={galleryItems[selectedImage].title}
               width={800}
               height={600}
-              className="w-full h-64 sm:h-80 md:h-96 object-contain rounded-2xl sm:rounded-3xl shadow-2xl"
+              className="w-full h-80 sm:h-[26rem] md:h-[32rem] object-contain rounded-2xl sm:rounded-3xl shadow-2xl"
             />
-            <div className="mt-4 sm:mt-6 text-center">
-              <h2 className="text-2xl sm:text-3xl font-bold text-white mb-2">{galleryItems[selectedImage].title}</h2>
-              <p className="text-lg sm:text-xl text-pink-300">{galleryItems[selectedImage].message}</p>
-            </div>
           </div>
         </div>
       )}

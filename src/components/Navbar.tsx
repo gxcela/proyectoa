@@ -8,6 +8,7 @@ const navItems = [
   { href: "/", label: "Inicio", icon: "🏠" },
   { href: "/carta", label: "Carta", icon: "💌" },
   { href: "/historia", label: "Historia", icon: "📖" },
+  { href: "/razones", label: "Razones", icon: "💖" },
   { href: "/quiz", label: "Quiz", icon: "❓" },
   { href: "/galeria", label: "Galería", icon: "🖼️" },
 ];
